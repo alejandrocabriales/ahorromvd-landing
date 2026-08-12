@@ -1,0 +1,395 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const waLink = import.meta.env.PUBLIC_WA_LINK ?? "https://wa.me/15556341498";
+
+const before = [
+  "Descargar una app",
+  "Crear una cuenta",
+  "Buscar promociones",
+  "Acordarte qué tarjeta usar",
+];
+
+const after = ["Abrís WhatsApp", "Preguntás", "AhorroMVD compara", "Elegís y ahorrás"];
+
+const capabilities = [
+  {
+    icon: "📍",
+    title: "Cerca tuyo",
+    desc: "Busca promociones teniendo en cuenta tu ubicación y las sucursales cercanas.",
+  },
+  {
+    icon: "💳",
+    title: "Con tus tarjetas",
+    desc: "Compara las promociones disponibles según las tarjetas que tenés.",
+  },
+  {
+    icon: "📅",
+    title: "Hoy o mañana",
+    desc: "Te muestra si conviene comprar ahora o esperar unos días.",
+  },
+  {
+    icon: "💰",
+    title: "Calculá tu ahorro",
+    desc: "Decile cuánto pensás gastar y calcula cuánto podrías ahorrar, considerando topes y condiciones.",
+  },
+];
+
+const examples = [
+  "¿Qué descuentos tengo en farmacias?",
+  "Tengo que hacer el súper mañana.",
+  "Voy a gastar unos $3.000.",
+  "¿Dónde me conviene comer hoy?",
+  "¿Qué tengo cerca con Itaú?",
+  "¿Me conviene comprar hoy o mañana?",
+];
+
+const steps = [
+  {
+    title: "Abrí WhatsApp",
+    desc: "No descargues nada.",
+  },
+  {
+    title: "Preguntá",
+    desc: 'Por ejemplo: "¿Dónde me conviene hacer el súper?"',
+  },
+  {
+    title: "Ahorrá",
+    desc: "AhorroMVD compara las opciones y te recomienda la mejor.",
+  },
+];
+
+const faqs = [
+  {
+    q: "¿Tengo que descargar una app?",
+    a: "No. AhorroMVD funciona por WhatsApp.",
+  },
+  {
+    q: "¿Cuánto cuesta?",
+    a: "Por ahora es gratis.",
+  },
+  {
+    q: "¿Tengo que registrar mis tarjetas?",
+    a: "Le contás qué tarjetas tenés en la conversación; no hay que cargarlas en ningún formulario.",
+  },
+  {
+    q: "¿Funciona solamente en Montevideo?",
+    a: "Inicialmente sí. Está pensado para promociones y comercios de Montevideo.",
+  },
+  {
+    q: "¿Me dice cuánto voy a ahorrar?",
+    a: "Sí, cuando conocemos el monto de compra y las condiciones de la promoción.",
+  },
+  {
+    q: "¿Me puede decir si conviene comprar hoy o mañana?",
+    a: "Sí, cuando existen promociones comparables para esos días.",
+  },
+];
+---
+
+<BaseLayout>
+  <main class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute left-[-8rem] top-[-6rem] h-72 w-72 rounded-full bg-leaf/15 blur-3xl"></div>
+      <div class="absolute right-[-7rem] top-24 h-80 w-80 rounded-full bg-moss/10 blur-3xl"></div>
+      <div class="absolute bottom-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#f0e9d8] blur-3xl"></div>
+    </div>
+
+    <header class="mx-auto flex max-w-7xl items-center justify-between px-6 pb-6 pt-6 sm:px-8 lg:px-10">
+      <a href="#inicio" class="group flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-sm font-extrabold text-white shadow-soft transition-transform duration-300 group-hover:-translate-y-0.5">
+          AM
+        </span>
+        <span>
+          <span class="block font-display text-lg font-extrabold tracking-tight">AhorroMVD</span>
+          <span class="block text-sm text-slate-500">Tu copiloto de ahorro para Montevideo</span>
+        </span>
+      </a>
+
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noreferrer"
+        class="hidden rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white shadow-soft transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
+      >
+        Probar gratis
+      </a>
+    </header>
+
+    <section id="inicio" class="mx-auto max-w-7xl px-6 pb-20 pt-6 sm:px-8 lg:px-10 lg:pb-24 lg:pt-10">
+      <div class="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div class="max-w-3xl">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-moss shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-leaf"></span>
+            Gratis · Por WhatsApp · Montevideo
+          </div>
+
+          <h1 class="font-display text-5xl font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+            No pagues de más por no saber qué descuento tenés.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+            AhorroMVD es tu copiloto de ahorro en Montevideo. Decile qué querés comprar y te ayuda a encontrar dónde, cuándo y con qué tarjeta te conviene hacerlo.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-leaf px-7 py-4 text-base font-bold text-[#08331b] shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              💬 Probar gratis por WhatsApp
+            </a>
+            <a
+              href="#como-funciona"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-7 py-4 text-base font-semibold text-ink backdrop-blur transition-colors hover:border-slate-400"
+            >
+              Ver cómo funciona
+            </a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-sm font-semibold text-moss">Sin app</p>
+              <p class="mt-1 text-sm text-slate-600">Funciona directo por WhatsApp.</p>
+            </div>
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-sm font-semibold text-moss">Montevideo</p>
+              <p class="mt-1 text-sm text-slate-600">Pensado para promos locales.</p>
+            </div>
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-sm font-semibold text-moss">Gratis</p>
+              <p class="mt-1 text-sm text-slate-600">Probalo sin tarjeta ni registro.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-4 top-8 h-24 w-24 rounded-full bg-leaf/20 blur-3xl"></div>
+          <div class="absolute -right-2 bottom-10 h-28 w-28 rounded-full bg-moss/20 blur-3xl"></div>
+
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 p-5 shadow-soft backdrop-blur-xl sm:p-6">
+            <div class="flex items-center justify-between border-b border-slate-200/80 pb-4">
+              <div>
+                <p class="text-sm font-semibold text-moss">WhatsApp preview</p>
+                <p class="text-xs text-slate-500">Una conversación simple, sin fricción</p>
+              </div>
+              <div class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-moss">
+                Online
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-4">
+              <div class="ml-auto max-w-[85%] rounded-3xl rounded-tr-md bg-ink px-4 py-3 text-sm leading-6 text-white shadow-sm">
+                ¿Dónde me conviene hacer el súper mañana?
+              </div>
+              <div class="max-w-[88%] rounded-3xl rounded-tl-md border border-emerald-100 bg-emerald-50 px-4 py-4 text-sm leading-6 text-ink shadow-sm">
+                Te comparo las promos cercanas y con tus tarjetas. Si querés, también te digo si conviene comprar hoy o mañana.
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="rounded-2xl border border-line bg-[#fbfcf9] p-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Antes</p>
+                  <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                    {before.map((item) => (
+                      <li class="flex items-center gap-2">
+                        <span class="text-rose-400">✕</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-moss">Con AhorroMVD</p>
+                  <ul class="mt-3 space-y-2 text-sm text-ink">
+                    {after.map((item) => (
+                      <li class="flex items-center gap-2">
+                        <span class="text-emerald-500">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
+              <p class="mt-2 text-sm text-slate-600">"¿Qué tengo cerca con Itaú?"</p>
+            </div>
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
+              <p class="mt-2 text-sm text-slate-600">"Voy a gastar unos $3.000."</p>
+            </div>
+            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
+              <p class="mt-2 text-sm text-slate-600">"¿Dónde me conviene comer hoy?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-black/5 bg-ink px-6 py-20 text-white sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+            No necesitás otra app para buscar descuentos.
+          </h2>
+          <p class="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
+            Ya tenés suficientes apps. AhorroMVD funciona directamente por WhatsApp, con una experiencia simple y rápida.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-5 lg:grid-cols-2">
+          <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-rose-300">Antes</p>
+            <div class="mt-5 space-y-3">
+              {before.map((item) => (
+                <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
+                  <span class="text-rose-300">✕</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="rounded-[1.75rem] border border-emerald-400/30 bg-gradient-to-br from-emerald-500/15 to-white/5 p-6 shadow-soft">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-leaf">Con AhorroMVD</p>
+            <div class="mt-5 space-y-3">
+              {after.map((item) => (
+                <div class="flex items-center gap-3 rounded-2xl border border-emerald-400/15 bg-[#0f1a15] px-4 py-3 text-white">
+                  <span class="text-leaf">✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+          ¿Qué puede hacer?
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">Cuatro cosas, bien hechas.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        {capabilities.map((cap) => (
+          <article class="rounded-[1.5rem] border border-line bg-white/80 p-7 shadow-sm backdrop-blur transition-transform duration-300 hover:-translate-y-1">
+            <div class="mb-4 text-3xl">{cap.icon}</div>
+            <h3 class="text-lg font-bold text-ink">{cap.title}</h3>
+            <p class="mt-3 leading-7 text-slate-600">{cap.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#eef4ef] px-6 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+            Hecho para la vida real.
+          </h2>
+          <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+            Le hablás como le hablarías a una persona. Sin comandos, sin formularios.
+          </p>
+        </div>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          {examples.map((item) => (
+            <span class="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-ink shadow-sm">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+          Cómo funciona
+        </h2>
+      </div>
+
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {steps.map((step, index) => (
+          <article class="rounded-[1.5rem] border border-line bg-white/80 p-7 text-center shadow-sm backdrop-blur">
+            <div class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-xl font-extrabold text-moss">
+              {index + 1}
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-ink">{step.title}</h3>
+            <p class="mt-3 leading-7 text-slate-600">{step.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="px-6 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-ink via-[#182920] to-[#0f1a15] px-6 py-12 text-center text-white shadow-soft sm:px-10 sm:py-14">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Probalo. Es gratis.
+        </h2>
+        <div class="mt-6 flex flex-col items-center gap-3 text-slate-300">
+          <p>No necesitás tarjeta de crédito.</p>
+          <p>No necesitás descargar una app.</p>
+          <p>No necesitás registrarte en otra plataforma.</p>
+        </div>
+        <div class="mt-8">
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center justify-center rounded-full bg-leaf px-8 py-4 text-base font-bold text-[#08331b] shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            💬 Probar AhorroMVD
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-6 py-20 sm:px-8 lg:px-10">
+      <div class="text-center">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+          Preguntas frecuentes
+        </h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        {faqs.map((faq) => (
+          <article class="rounded-[1.25rem] border border-line bg-white/85 p-6 shadow-sm backdrop-blur">
+            <h3 class="text-lg font-bold text-ink">{faq.q}</h3>
+            <p class="mt-3 leading-7 text-slate-600">{faq.a}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <footer class="border-t border-black/5 px-6 py-10 sm:px-8 lg:px-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-display text-lg font-extrabold tracking-tight text-ink">AhorroMVD</p>
+          <p class="mt-1 text-sm text-slate-500">Tu copiloto de ahorro para Montevideo.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-5 text-sm font-medium text-slate-500">
+          <a href={waLink} target="_blank" rel="noreferrer" class="transition-colors hover:text-ink">
+            WhatsApp
+          </a>
+          <a href="#inicio" class="transition-colors hover:text-ink">
+            Inicio
+          </a>
+          <a href="#como-funciona" class="transition-colors hover:text-ink">
+            Cómo funciona
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

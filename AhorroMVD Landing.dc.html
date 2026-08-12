@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap');
+    body { margin: 0; background: #FAFAF8; }
+    a { color: #128C4A; }
+    a:hover { color: #0d6b39; }
+    * { box-sizing: border-box; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pop { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+  </style>
+</helmet>
+
+<div style="font-family: 'Inter', sans-serif; color: #16221C; background: #FAFAF8; overflow-x: hidden;">
+
+  <!-- NAV -->
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 22px 24px;">
+    <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.02em;">AhorroMVD</div>
+    <a href="{{ waLink }}" target="_blank" style="text-decoration: none; background: #16221C; color: #fff; padding: 10px 18px; border-radius: 100px; font-weight: 600; font-size: 14px; white-space: nowrap;">Probar gratis</a>
+  </div>
+
+  <!-- HERO -->
+  <div style="max-width: 780px; margin: 0 auto; padding: 40px 24px 56px; text-align: center;">
+    <div style="display: inline-flex; align-items: center; gap: 8px; background: #E9F7EF; color: #128C4A; padding: 7px 14px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px;">
+      <span style="width: 7px; height: 7px; border-radius: 50%; background: #25D366;"></span>
+      Gratis · Por WhatsApp · Montevideo
+    </div>
+    <h1 style="font-family: 'Manrope', sans-serif; font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 18px;">No pagues de más por no saber qué descuento tenés.</h1>
+    <p style="font-size: 18px; line-height: 1.55; color: #4B5A52; margin: 0 auto 30px; max-width: 560px;">AhorroMVD es tu copiloto de ahorro en Montevideo. Decile qué querés comprar y te ayuda a encontrar dónde, cuándo y con qué tarjeta te conviene hacerlo.</p>
+    <a href="{{ waLink }}" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #08331B; padding: 17px 30px; border-radius: 100px; font-weight: 700; font-size: 17px; box-shadow: 0 10px 30px -8px rgba(37,211,102,0.55);">
+      💬 Probar gratis por WhatsApp
+    </a>
+    <div style="margin-top: 14px; font-size: 14px; color: #8A968E;">Sin descargar ninguna app.</div>
+  </div>
+
+  <!-- NO NECESITAS OTRA APP -->
+  <div style="background: #16221C; padding: 72px 24px;">
+    <div style="max-width: 880px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Manrope', sans-serif; color: #fff; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px;">No necesitás otra app para buscar descuentos.</h2>
+      <p style="color: #9CA89F; font-size: 16px; line-height: 1.6; margin: 0 0 44px;">Ya tenés suficientes apps. AhorroMVD funciona directamente por WhatsApp.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 620px; margin: 0 auto;">
+        <div style="background: #1E2B24; border-radius: 16px; padding: 26px 20px; text-align: left;">
+          <div style="font-size: 13px; font-weight: 700; color: #E8927C; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px;">Antes</div>
+          <sc-for list="{{ before }}" as="item" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; gap: 10px; color: #C6CFC8; font-size: 15px; padding: 8px 0;">
+              <span style="color: #E8927C;">✕</span>{{ item }}
+            </div>
+          </sc-for>
+        </div>
+        <div style="background: #1E2B24; border-radius: 16px; padding: 26px 20px; text-align: left; border: 1px solid #25D36655;">
+          <div style="font-size: 13px; font-weight: 700; color: #25D366; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px;">Con AhorroMVD</div>
+          <sc-for list="{{ after }}" as="item" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; gap: 10px; color: #fff; font-size: 15px; padding: 8px 0;">
+              <span style="color: #25D366;">✓</span>{{ item }}
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUE PUEDE HACER -->
+  <div style="max-width: 1000px; margin: 0 auto; padding: 88px 24px;">
+    <h2 style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; text-align: center; margin: 0 0 12px;">¿Qué puede hacer?</h2>
+    <p style="text-align: center; color: #6B7A70; font-size: 16px; margin: 0 0 48px;">Cuatro cosas, bien hechas.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <sc-for list="{{ capabilities }}" as="cap" hint-placeholder-count="4">
+        <div style="background: #fff; border: 1px solid #E7EBE7; border-radius: 18px; padding: 28px;">
+          <div style="font-size: 28px; margin-bottom: 14px;">{{ cap.icon }}</div>
+          <div style="font-weight: 700; font-size: 17px; margin-bottom: 8px;">{{ cap.title }}</div>
+          <div style="color: #6B7A70; font-size: 15px; line-height: 1.55;">{{ cap.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- HECHO PARA LA VIDA REAL -->
+  <div style="background: #F0F4F0; padding: 88px 24px;">
+    <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 12px;">Hecho para la vida real.</h2>
+      <p style="color: #6B7A70; font-size: 16px; margin: 0 0 40px;">Le hablás como le hablarías a una persona. Sin comandos, sin formularios.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+        <sc-for list="{{ examples }}" as="ex" hint-placeholder-count="6">
+          <div style="background: #fff; border: 1px solid #DCE5DC; border-radius: 100px; padding: 12px 20px; font-size: 15px; color: #2A362F;">{{ ex }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div style="max-width: 900px; margin: 0 auto; padding: 88px 24px;">
+    <h2 style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; text-align: center; margin: 0 0 48px;">Cómo funciona</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
+        <div style="text-align: center;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #E9F7EF; color: #128C4A; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; margin: 0 auto 18px;">{{ $index }}</div>
+          <div style="font-weight: 700; font-size: 17px; margin-bottom: 8px;">{{ step.title }}</div>
+          <div style="color: #6B7A70; font-size: 15px; line-height: 1.5;">{{ step.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ES GRATIS -->
+  <div style="background: #16221C; padding: 88px 24px; text-align: center;">
+    <div style="max-width: 560px; margin: 0 auto;">
+      <h2 style="font-family: 'Manrope', sans-serif; color: #fff; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 24px;">Probalo. Es gratis.</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; margin-bottom: 32px;">
+        <div style="color: #C6CFC8; font-size: 15px;">No necesitás tarjeta de crédito.</div>
+        <div style="color: #C6CFC8; font-size: 15px;">No necesitás descargar una app.</div>
+        <div style="color: #C6CFC8; font-size: 15px;">No necesitás registrarte en otra plataforma.</div>
+      </div>
+      <a href="{{ waLink }}" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #08331B; padding: 17px 30px; border-radius: 100px; font-weight: 700; font-size: 17px;">
+        💬 Probar AhorroMVD
+      </a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="max-width: 720px; margin: 0 auto; padding: 88px 24px;">
+    <h2 style="font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; text-align: center; margin: 0 0 44px;">Preguntas frecuentes</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="6">
+        <div style="background: #fff; border: 1px solid #E7EBE7; border-radius: 14px; padding: 20px 22px;">
+          <div style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">{{ faq.q }}</div>
+          <div style="color: #6B7A70; font-size: 15px; line-height: 1.55;">{{ faq.a }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top: 1px solid #E7EBE7; padding: 40px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; margin-bottom: 4px;">AhorroMVD</div>
+        <div style="color: #8A968E; font-size: 14px;">Tu copiloto de ahorro para Montevideo.</div>
+      </div>
+      <div style="display: flex; gap: 24px; font-size: 14px;">
+        <a href="{{ waLink }}" target="_blank" style="text-decoration: none;">WhatsApp</a>
+        <a href="#" style="text-decoration: none; color: #6B7A70;">Privacidad</a>
+        <a href="#" style="text-decoration: none; color: #6B7A70;">Términos</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:900},&quot;waLink&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wa.me/15556341498&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      waLink: this.props.waLink ?? 'https://wa.me/15556341498',
+      before: ['Descargar una app', 'Crear una cuenta', 'Buscar promociones', 'Acordarte qué tarjeta usar'],
+      after: ['Abrís WhatsApp', 'Preguntás', 'AhorroMVD compara', 'Elegís y ahorrás'],
+      capabilities: [
+        { icon: '📍', title: 'Cerca tuyo', desc: 'Busca promociones teniendo en cuenta tu ubicación y las sucursales cercanas.' },
+        { icon: '💳', title: 'Con tus tarjetas', desc: 'Compara las promociones disponibles según las tarjetas que tenés.' },
+        { icon: '📅', title: 'Hoy o mañana', desc: 'Te muestra si conviene comprar ahora o esperar unos días.' },
+        { icon: '💰', title: 'Calculá tu ahorro', desc: 'Decile cuánto pensás gastar y calcula cuánto podrías ahorrar, considerando los topes cuando estén disponibles.' },
+      ],
+      examples: [
+        '¿Qué descuentos tengo en farmacias?',
+        'Tengo que hacer el súper mañana.',
+        'Voy a gastar unos $3.000.',
+        '¿Dónde me conviene comer hoy?',
+        '¿Qué tengo cerca con Itaú?',
+        '¿Me conviene comprar hoy o mañana?',
+      ],
+      steps: [
+        { title: 'Abrí WhatsApp', desc: 'No descargues nada.' },
+        { title: 'Preguntá', desc: '"¿Dónde me conviene hacer el súper?"' },
+        { title: 'Ahorrá', desc: 'AhorroMVD compara las opciones y te recomienda la mejor.' },
+      ],
+      faqs: [
+        { q: '¿Tengo que descargar una app?', a: 'No. AhorroMVD funciona por WhatsApp.' },
+        { q: '¿Cuánto cuesta?', a: 'Por ahora es gratis.' },
+        { q: '¿Tengo que registrar mis tarjetas?', a: 'Le contás qué tarjetas tenés en la conversación; no hay que cargarlas en ningún formulario.' },
+        { q: '¿Funciona solamente en Montevideo?', a: 'Inicialmente sí. Está pensado para promociones y comercios de Montevideo.' },
+        { q: '¿Me dice cuánto voy a ahorrar?', a: 'Sí, cuando conocemos el monto de compra y las condiciones de la promoción.' },
+        { q: '¿Me puede decir si conviene comprar hoy o mañana?', a: 'Sí, cuando existen promociones comparables para esos días.' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

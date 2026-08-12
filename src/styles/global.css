@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(37, 211, 102, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(18, 140, 74, 0.12), transparent 26%),
+    #fafaf6;
+  color: #13221a;
+}
+
+::selection {
+  background: rgba(37, 211, 102, 0.24);
+  color: #13221a;
+}
