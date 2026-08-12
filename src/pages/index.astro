@@ -59,6 +59,31 @@ const steps = [
   },
 ];
 
+const plans = [
+  {
+    name: "Free",
+    price: "0",
+    description: "Para probar AhorroMVD sin compromiso.",
+    features: ["10 consultas por mes", "Comparación de precios", "Supermercados participantes", "Sin tarjeta de crédito"],
+    cta: "Probar gratis",
+  },
+  {
+    name: "Ahorro",
+    price: "1,99",
+    description: "Para ahorrar en las compras de todos los días.",
+    features: ["Hasta 100 consultas por mes", "Comparación de precios", "Historial de consultas", "Listas de compras", "Respuestas más rápidas"],
+    cta: "Empezar ahora",
+    featured: true,
+  },
+  {
+    name: "Power",
+    price: "4,99",
+    description: "Para quienes consultan y comparan mucho más.",
+    features: ["Hasta 500 consultas por mes", "Todo lo del plan Ahorro", "Uso intensivo", "Prioridad en nuevas funciones"],
+    cta: "Elegir Power",
+  },
+];
+
 const faqs = [
   {
     q: "¿Tengo que descargar una app?",
@@ -66,7 +91,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta?",
-    a: "Por ahora es gratis.",
+    a: "Podés usar el plan Free sin costo o elegir un plan mensual según cuántas consultas necesitás.",
   },
   {
     q: "¿Tengo que registrar mis tarjetas?",
@@ -83,6 +108,10 @@ const faqs = [
   {
     q: "¿Me puede decir si conviene comprar hoy o mañana?",
     a: "Sí, cuando existen promociones comparables para esos días.",
+  },
+  {
+    q: "¿Qué categorías están disponibles?",
+    a: "Por ahora, AhorroMVD busca descuentos en Farmacias, Comercios y Restaurantes. Próximamente se sumarán más categorías y promociones.",
   },
 ];
 ---
@@ -121,7 +150,7 @@ const faqs = [
         <div class="max-w-3xl">
           <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-moss shadow-sm">
             <span class="h-2 w-2 rounded-full bg-leaf"></span>
-            Gratis · Por WhatsApp · Montevideo
+            Por ahora: Farmacias · Comercios · Restaurantes
           </div>
 
           <h1 class="font-display text-5xl font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl">
@@ -149,19 +178,19 @@ const faqs = [
             </a>
           </div>
 
-          <div class="mt-8 hidden gap-3 sm:grid sm:grid-cols-3">
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-sm font-semibold text-moss">Sin app</p>
-              <p class="mt-1 text-sm text-slate-600">Funciona directo por WhatsApp.</p>
+          <div class="mt-8 rounded-[1.5rem] border border-emerald-200 bg-emerald-50/80 p-5 shadow-sm backdrop-blur">
+            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-moss">Por ahora</p>
+            <p class="mt-2 font-display text-lg font-extrabold tracking-tight text-ink">
+              Buscamos descuentos en estas categorías:
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-ink">
+              <span class="rounded-full border border-emerald-200 bg-white px-3 py-1.5">💊 Farmacias</span>
+              <span class="rounded-full border border-emerald-200 bg-white px-3 py-1.5">🛍️ Comercios</span>
+              <span class="rounded-full border border-emerald-200 bg-white px-3 py-1.5">🍽️ Restaurantes</span>
             </div>
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-sm font-semibold text-moss">Montevideo</p>
-              <p class="mt-1 text-sm text-slate-600">Pensado para promos locales.</p>
-            </div>
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-sm font-semibold text-moss">Gratis</p>
-              <p class="mt-1 text-sm text-slate-600">Probalo sin tarjeta ni registro.</p>
-            </div>
+            <p class="mt-3 text-sm leading-6 text-slate-600">
+              Próximamente vamos a sumar más categorías y descuentos. Consultas por rubros como verdulerías, ferreterías o ropa todavía no están disponibles.
+            </p>
           </div>
         </div>
 
@@ -331,6 +360,77 @@ const faqs = [
       </div>
     </section>
 
+    <section id="planes" class="border-y border-black/5 bg-[#f1f6f1] px-6 py-20 sm:px-8 lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-moss">Planes simples</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+            Elegí el plan que mejor se adapta a tus compras
+          </h2>
+          <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+            Probalo gratis y empezá a ahorrar en cada compra desde WhatsApp.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-12 grid max-w-6xl gap-5 lg:grid-cols-3 lg:items-stretch">
+          {plans.map((plan) => (
+            <article
+              class:list={[
+                "relative flex flex-col rounded-[1.75rem] border p-6 shadow-sm sm:p-7",
+                plan.featured
+                  ? "border-moss bg-ink text-white shadow-soft lg:-translate-y-3 lg:shadow-glow"
+                  : "border-line bg-white/90 text-ink",
+              ]}
+            >
+              {plan.featured && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-leaf px-3 py-1 text-xs font-extrabold text-[#08331b] shadow-sm">
+                  Más elegido
+                </span>
+              )}
+
+              <div>
+                <h3 class="font-display text-xl font-extrabold tracking-tight">{plan.name}</h3>
+                <p class:list={["mt-2 text-sm leading-6", plan.featured ? "text-slate-300" : "text-slate-600"]}>
+                  {plan.description}
+                </p>
+              </div>
+
+              <div class="mt-7 flex items-end gap-1">
+                <span class="text-sm font-bold">USD</span>
+                <span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span>
+                <span class:list={["mb-1 text-sm", plan.featured ? "text-slate-300" : "text-slate-500"]}>/ mes</span>
+              </div>
+
+              <ul class="mt-7 space-y-3">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-sm leading-5">
+                    <span class:list={["mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-xs font-extrabold", plan.featured ? "bg-leaf text-[#08331b]" : "bg-emerald-100 text-moss"]}>✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noreferrer"
+                class:list={[
+                  "mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold transition-transform duration-300 hover:-translate-y-0.5",
+                  plan.featured ? "bg-leaf text-[#08331b] shadow-glow" : "border border-slate-300 bg-white text-ink hover:border-slate-400",
+                ]}
+              >
+                {plan.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <p class="mx-auto mt-8 max-w-2xl text-center text-sm leading-6 text-slate-600">
+          Todos los planes funcionan directamente desde WhatsApp. Podés cambiar de plan en cualquier momento y cancelar cuando quieras.
+        </p>
+      </div>
+    </section>
+
     <section class="px-6 py-20 sm:px-8 lg:px-10">
       <div class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-ink via-[#182920] to-[#0f1a15] px-6 py-12 text-center text-white shadow-soft sm:px-10 sm:py-14">
         <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -387,6 +487,9 @@ const faqs = [
           </a>
           <a href="#como-funciona" class="transition-colors hover:text-ink">
             Cómo funciona
+          </a>
+          <a href="#planes" class="transition-colors hover:text-ink">
+            Planes
           </a>
         </div>
       </div>
