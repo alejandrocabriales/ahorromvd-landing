@@ -149,7 +149,7 @@ const faqs = [
             </a>
           </div>
 
-          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="mt-8 hidden gap-3 sm:grid sm:grid-cols-3">
             <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
               <p class="text-sm font-semibold text-moss">Sin app</p>
               <p class="mt-1 text-sm text-slate-600">Funciona directo por WhatsApp.</p>
@@ -169,63 +169,63 @@ const faqs = [
           <div class="absolute -left-4 top-8 h-24 w-24 rounded-full bg-leaf/20 blur-3xl"></div>
           <div class="absolute -right-2 bottom-10 h-28 w-28 rounded-full bg-moss/20 blur-3xl"></div>
 
-          <div class="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 p-5 shadow-soft backdrop-blur-xl sm:p-6">
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 p-4 shadow-soft backdrop-blur-xl sm:p-6">
             <div class="flex items-center justify-between border-b border-slate-200/80 pb-4">
               <div>
                 <p class="text-sm font-semibold text-moss">WhatsApp preview</p>
-                <p class="text-xs text-slate-500">Una conversación simple, sin fricción</p>
+                <p class="text-xs text-slate-500">Demo con datos ilustrativos</p>
               </div>
               <div class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-moss">
-                Online
+                AhorroMVD
               </div>
             </div>
 
-            <div class="mt-5 space-y-4">
+            <div class="mt-4 space-y-3">
               <div class="ml-auto max-w-[85%] rounded-3xl rounded-tr-md bg-ink px-4 py-3 text-sm leading-6 text-white shadow-sm">
                 ¿Dónde me conviene hacer el súper mañana?
               </div>
-              <div class="max-w-[88%] rounded-3xl rounded-tl-md border border-emerald-100 bg-emerald-50 px-4 py-4 text-sm leading-6 text-ink shadow-sm">
-                Te comparo las promos cercanas y con tus tarjetas. Si querés, también te digo si conviene comprar hoy o mañana.
-              </div>
-              <div class="grid gap-3 sm:grid-cols-2">
-                <div class="rounded-2xl border border-line bg-[#fbfcf9] p-4">
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Antes</p>
-                  <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                    {before.map((item) => (
-                      <li class="flex items-center gap-2">
-                        <span class="text-rose-400">✕</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-moss">Con AhorroMVD</p>
-                  <ul class="mt-3 space-y-2 text-sm text-ink">
-                    {after.map((item) => (
-                      <li class="flex items-center gap-2">
-                        <span class="text-emerald-500">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+              <div class="max-w-[94%] rounded-3xl rounded-tl-md border border-emerald-100 bg-emerald-50 px-4 py-4 text-sm leading-5 text-ink shadow-sm">
+                <p>Para una compra de demo de $4.000 en Pocitos, mañana te conviene:</p>
 
-          <div class="mt-4 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
-              <p class="mt-2 text-sm text-slate-600">"¿Qué tengo cerca con Itaú?"</p>
-            </div>
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
-              <p class="mt-2 text-sm text-slate-600">"Voy a gastar unos $3.000."</p>
-            </div>
-            <div class="rounded-2xl border border-line bg-white/80 p-4 shadow-sm backdrop-blur">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Prompt</p>
-              <p class="mt-2 text-sm text-slate-600">"¿Dónde me conviene comer hoy?"</p>
+                <div class="mt-3 rounded-2xl bg-leaf px-4 py-3 text-[#08331b] shadow-sm">
+                  <p class="text-[10px] font-extrabold uppercase tracking-[0.18em]">Ahorrás hasta</p>
+                  <p class="mt-0.5 font-display text-3xl font-extrabold leading-none">$1.600</p>
+                  <p class="mt-1 text-xs font-semibold">esperando a mañana con OCA</p>
+                </div>
+
+                <div class="mt-3 rounded-2xl border border-emerald-200 bg-white p-3 shadow-sm">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-[10px] font-extrabold uppercase tracking-[0.16em] text-moss">🏆 Mejor opción</p>
+                      <p class="mt-1 font-bold">Ta-Ta Pocitos</p>
+                    </div>
+                    <span class="rounded-full bg-emerald-100 px-2 py-1 text-xs font-extrabold text-moss">40% OFF</span>
+                  </div>
+                  <div class="mt-2 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+                    <span class="rounded-full bg-slate-100 px-2 py-1">OCA</span>
+                    <span class="rounded-full bg-slate-100 px-2 py-1">📍 700 m</span>
+                    <span class="rounded-full bg-slate-100 px-2 py-1">Mañana</span>
+                  </div>
+                </div>
+
+                <div class="mt-2 flex items-center justify-between rounded-2xl border border-slate-200 bg-white/70 px-3 py-2 text-xs">
+                  <span><strong>Disco</strong> · 25% con Itaú</span>
+                  <span class="font-semibold text-slate-500">1,1 km</span>
+                </div>
+
+                <p class="mt-3 font-semibold text-moss">👉 Mi recomendación: Ta-Ta con OCA.</p>
+              </div>
+
+              <div class="ml-auto max-w-[72%] rounded-3xl rounded-tr-md bg-ink px-4 py-2.5 text-sm leading-5 text-white shadow-sm">
+                Voy a gastar unos $4.000.
+              </div>
+              <div class="max-w-[88%] rounded-3xl rounded-tl-md border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm leading-5 text-ink shadow-sm">
+                Con el 40%, serían <strong>$1.600 de descuento</strong>. Pagarías aproximadamente <strong>$2.400</strong>, sujeto al tope de la promo.
+              </div>
+
+              <p class="px-1 pt-1 text-center font-display text-base font-extrabold tracking-tight text-ink sm:text-lg">
+                No te mostramos descuentos. Te decimos cuál te conviene.
+              </p>
             </div>
           </div>
         </div>
