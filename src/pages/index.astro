@@ -63,23 +63,23 @@ const plans = [
   {
     name: "Free",
     price: "0",
-    description: "Para probar AhorroMVD sin compromiso.",
-    features: ["10 consultas por mes", "Comparación de precios", "Supermercados participantes", "Sin tarjeta de crédito"],
-    cta: "Probar gratis",
+    description: "Probá AhorroMVD sin costo.",
+    features: ["10 consultas por mes"],
+    cta: "Empezar gratis",
   },
   {
     name: "Ahorro",
-    price: "1,99",
+    price: "40",
     description: "Para ahorrar en las compras de todos los días.",
-    features: ["Hasta 100 consultas por mes", "Comparación de precios", "Historial de consultas", "Listas de compras", "Respuestas más rápidas"],
-    cta: "Empezar ahora",
+    features: ["50 consultas por mes", "Búsqueda de mejores precios", "Uso desde WhatsApp", "Ideal para uso diario"],
+    cta: "Elegir Ahorro",
     featured: true,
   },
   {
     name: "Power",
-    price: "4,99",
-    description: "Para quienes consultan y comparan mucho más.",
-    features: ["Hasta 500 consultas por mes", "Todo lo del plan Ahorro", "Uso intensivo", "Prioridad en nuevas funciones"],
+    price: "80",
+    description: "Para quienes consultan precios constantemente.",
+    features: ["150 consultas por mes", "Más consultas para usuarios frecuentes", "Búsqueda de mejores precios", "Uso desde WhatsApp"],
     cta: "Elegir Power",
   },
 ];
@@ -91,7 +91,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta?",
-    a: "Podés usar el plan Free sin costo o elegir un plan mensual según cuántas consultas necesitás.",
+    a: "Podés empezar con 10 consultas gratis por mes. Si necesitás más, Ahorro cuesta $40 por mes y Power $80 por mes.",
   },
   {
     q: "¿Tengo que registrar mis tarjetas?",
@@ -141,7 +141,7 @@ const faqs = [
         rel="noreferrer"
         class="hidden rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white shadow-soft transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
       >
-        Probar gratis
+        Empezar gratis
       </a>
     </header>
 
@@ -168,7 +168,7 @@ const faqs = [
               rel="noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-leaf px-7 py-4 text-base font-bold text-[#08331b] shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
-              💬 Probar gratis por WhatsApp
+              💬 Empezar gratis por WhatsApp
             </a>
             <a
               href="#como-funciona"
@@ -368,7 +368,7 @@ const faqs = [
             Elegí el plan que mejor se adapta a tus compras
           </h2>
           <p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
-            Probalo gratis y empezá a ahorrar en cada compra desde WhatsApp.
+            Empezá gratis y elegí el plan que mejor se adapte a tus compras.
           </p>
         </div>
 
@@ -396,7 +396,7 @@ const faqs = [
               </div>
 
               <div class="mt-7 flex items-end gap-1">
-                <span class="text-sm font-bold">USD</span>
+                <span class="text-2xl font-extrabold">$</span>
                 <span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span>
                 <span class:list={["mb-1 text-sm", plan.featured ? "text-slate-300" : "text-slate-500"]}>/ mes</span>
               </div>
@@ -426,7 +426,7 @@ const faqs = [
         </div>
 
         <p class="mx-auto mt-8 max-w-2xl text-center text-sm leading-6 text-slate-600">
-          Todos los planes funcionan directamente desde WhatsApp. Podés cambiar de plan en cualquier momento y cancelar cuando quieras.
+          Todos los planes funcionan directamente desde WhatsApp. Todos los planes se renuevan mensualmente.
         </p>
       </div>
     </section>
@@ -434,12 +434,12 @@ const faqs = [
     <section class="px-6 py-20 sm:px-8 lg:px-10">
       <div class="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-ink via-[#182920] to-[#0f1a15] px-6 py-12 text-center text-white shadow-soft sm:px-10 sm:py-14">
         <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Probalo. Es gratis.
+          Empezá gratis por WhatsApp.
         </h2>
         <div class="mt-6 flex flex-col items-center gap-3 text-slate-300">
-          <p>No necesitás tarjeta de crédito.</p>
+          <p>Tenés 10 consultas gratis por mes.</p>
+          <p>Sin tarjeta para empezar con el plan Free.</p>
           <p>No necesitás descargar una app.</p>
-          <p>No necesitás registrarte en otra plataforma.</p>
         </div>
         <div class="mt-8">
           <a
@@ -448,7 +448,7 @@ const faqs = [
             rel="noreferrer"
             class="inline-flex items-center justify-center rounded-full bg-leaf px-8 py-4 text-base font-bold text-[#08331b] shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
           >
-            💬 Probar AhorroMVD
+            💬 Empezar gratis
           </a>
         </div>
       </div>
